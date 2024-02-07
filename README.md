@@ -6,10 +6,12 @@ JojoDiff is great because it generates linear patch files, which can be applied 
 
 ## Installation
 
-Make sure 'make' command is in your path (Linux, macOS, Cygwin under Windows)
+Make sure 'make' command is in your path (Linux, macOS, Cygwin under Windows) by running:
+`    make -v
+   `
 
 1. Install the package:
 
    ```
-   $ yarn add jojodiff-js
+   yarn add jojodiff-js
    ```
