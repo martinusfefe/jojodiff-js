@@ -1,4 +1,4 @@
-import { exec } from 'child_process';
+import { ExecException, exec } from 'child_process';
 import getExecutablePath from 'getExecutablePath';
 
 const executablePath = getExecutablePath();
@@ -25,6 +25,7 @@ interface JDiffOptions {
 interface JDiffResult {
     success: boolean;
     message: string;
+    error?: ExecException;
     stdout?: string;
     stderr?: string;
 }
@@ -73,7 +74,7 @@ function executeCommand(command: string): Promise<JDiffResult> {
     return new Promise((resolve) => {
         exec(command, (error, stdout, stderr) => {
             if (error) {
-                resolve({ success: false, message: error.message, stdout, stderr});
+                resolve({ success: false, message: error.message, error, stdout, stderr});
             } else {
                 resolve({ success: true, message: stdout });
             }
