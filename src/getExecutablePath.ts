@@ -14,9 +14,6 @@ export default () => {
     arch = '32'
   }
 
-  console.log('Platform:', platform)
-  console.log('Arch:', arch)
-
   const executablePath = path.join(basePath, 'bin', platform, arch)
   let executableName = 'jdiff'
   if (platform === 'win32') {
