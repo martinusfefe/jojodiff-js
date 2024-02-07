@@ -1,22 +1,39 @@
 /// <reference types="node" />
 import { ExecException } from 'child_process';
 interface JDiffOptions {
+    /** Verbose: greeting, results and tips. */
     verbose?: boolean;
+    /** Extra Verbose: progress info and statistics. */
     extraVerbose?: boolean;
+    /** Ultra Verbose: all info, including help and details. */
     ultraVerbose?: boolean;
+    /** Detailed human readable output. */
     listing?: boolean;
+    /** Grouped human readable output. */
     regions?: boolean;
+    /** Better: use more memory, search more. */
     better?: boolean;
+    /** Best: even more memory, search more. */
     best?: boolean;
+    /** Lazy: no unbuffered searching (often slower). */
     lazy?: boolean;
+    /** Lazier: no full index table. */
     lazier?: boolean;
+    /** Sequential source (to avoid !) (with - for stdin). */
     sequentialSource?: boolean;
+    /** Sequential destination (with - for stdin). */
     sequentialDest?: boolean;
+    /** Size (in KB) to search */
     searchSize?: number;
+    /** Size (in MB) for index table. */
     indexSize?: number;
+    /** Block size in bytes for reading. */
     blockSize?: number;
+    /** Size (in KB) for search buffers (0=no buffering). */
     bufferSize?: number;
+    /** Minimum number of matches to search (default 2). */
     searchMin?: number;
+    /** Maximum number of matches to search (default 128). */
     searchMax?: number;
 }
 interface JDiffResultSuccess {
