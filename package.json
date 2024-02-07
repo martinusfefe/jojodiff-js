@@ -1,6 +1,6 @@
 {
   "name": "jojodiff-js",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "JojoDiff for JavaScript",
   "main": "./lib/src/index.js",
   "scripts": {
@@ -10,16 +10,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "directories": {
-    "lib": "lib"
+    "lib": "lib",
+    "scripts": "scripts",
+    "jdiff": "jdiff"
   },
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "scripts",
+    "jdiff"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/martinusfefe/jojodiff-js"
+    "url": "git+https://github.com/martinusfefe/jojodiff-js.git"
   },
   "keywords": [
     "diff",
