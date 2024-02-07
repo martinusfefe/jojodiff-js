@@ -5,9 +5,10 @@ const executablePath = getExecutablePath();
 
 interface JDiffOptions {
     verbose?: boolean;
+    extraVerbose?: boolean;
+    ultraVerbose?: boolean;
     listing?: boolean;
     regions?: boolean;
-    console?: boolean;
     better?: boolean;
     best?: boolean;
     lazy?: boolean;
@@ -21,6 +22,26 @@ interface JDiffOptions {
     searchMin?: number;
     searchMax?: number;
 }
+
+const flagMapping: Record<keyof JDiffOptions, string> = {
+    verbose: 'v',
+    extraVerbose: 'vv',
+    ultraVerbose: 'vvv',
+    listing: 'l',
+    regions: 'r',
+    better: 'b',
+    best: 'bb',
+    lazy: 'f',
+    lazier: 'ff',
+    sequentialSource: 'p',
+    sequentialDest: 'q',
+    searchSize: 'a',
+    indexSize: 'i',
+    blockSize: 'k',
+    bufferSize: 'n',
+    searchMin: 'n',
+    searchMax: 'x',
+} as const;
 
 interface JDiffResultSuccess {
     success: true;
@@ -68,9 +89,11 @@ function buildOptionsString(options?: JDiffOptions): string {
     if (options) {
         for (const [key, value] of Object.entries(options)) {
             if (value === true) {
-                optionsString += `-${key} `;
+                const flag = flagMapping[key as keyof JDiffOptions];
+                optionsString += `-${flag} `;
             } else if (typeof value === 'number') {
-                optionsString += `-${key} ${value} `;
+                const flag = flagMapping[key as keyof JDiffOptions];
+                optionsString += `-${flag} ${value} `;
             }
         }
     }

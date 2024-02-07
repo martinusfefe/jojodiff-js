@@ -2,9 +2,10 @@
 import { ExecException } from 'child_process';
 interface JDiffOptions {
     verbose?: boolean;
+    extraVerbose?: boolean;
+    ultraVerbose?: boolean;
     listing?: boolean;
     regions?: boolean;
-    console?: boolean;
     better?: boolean;
     best?: boolean;
     lazy?: boolean;
