@@ -22,13 +22,20 @@ interface JDiffOptions {
     searchMax?: number;
 }
 
-interface JDiffResult {
-    success: boolean;
+interface JDiffResultSuccess {
+    success: true;
+    message: string;
+}
+
+interface JDiffResultFailure {
+    success: false;
     message: string;
     error?: ExecException;
     stdout?: string;
     stderr?: string;
 }
+
+export type JDiffResult = JDiffResultSuccess | JDiffResultFailure;
 
 /**
  * Create a diff file between a source file and a destination file.

@@ -1,3 +1,5 @@
+/// <reference types="node" />
+import { ExecException } from 'child_process';
 interface JDiffOptions {
     verbose?: boolean;
     listing?: boolean;
@@ -16,12 +18,18 @@ interface JDiffOptions {
     searchMin?: number;
     searchMax?: number;
 }
-interface JDiffResult {
-    success: boolean;
+interface JDiffResultSuccess {
+    success: true;
     message: string;
+}
+interface JDiffResultFailure {
+    success: false;
+    message: string;
+    error?: ExecException;
     stdout?: string;
     stderr?: string;
 }
+export type JDiffResult = JDiffResultSuccess | JDiffResultFailure;
 /**
  * Create a diff file between a source file and a destination file.
  * @param sourceFile The path to the source file.
