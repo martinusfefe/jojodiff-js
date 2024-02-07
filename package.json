@@ -1,6 +1,6 @@
 {
   "name": "jojodiff-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JojoDiff for JavaScript",
   "main": "./lib/src/index.js",
   "scripts": {
@@ -18,12 +18,14 @@
     "lib"
   ],
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/martinusfefe/jojodiff-js"
   },
   "keywords": [
     "diff",
     "jojodiff",
-    "janpatch"
+    "jojodiff-js",
+    "node-jojodiff"
   ],
   "authors": [
     "Martin Repka",

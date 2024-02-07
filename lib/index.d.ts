@@ -19,6 +19,8 @@ interface JDiffOptions {
 interface JDiffResult {
     success: boolean;
     message: string;
+    stdout?: string;
+    stderr?: string;
 }
 /**
  * Create a diff file between a source file and a destination file.

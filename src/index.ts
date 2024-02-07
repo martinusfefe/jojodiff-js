@@ -25,6 +25,8 @@ interface JDiffOptions {
 interface JDiffResult {
     success: boolean;
     message: string;
+    stdout?: string;
+    stderr?: string;
 }
 
 /**
@@ -71,7 +73,7 @@ function executeCommand(command: string): Promise<JDiffResult> {
     return new Promise((resolve) => {
         exec(command, (error, stdout, stderr) => {
             if (error) {
-                resolve({ success: false, message: stderr });
+                resolve({ success: false, message: error.message, stdout, stderr});
             } else {
                 resolve({ success: true, message: stdout });
             }
