@@ -80,7 +80,7 @@ function buildOptionsString(options?: JDiffOptions): string {
 function executeCommand(command: string): Promise<JDiffResult> {
     return new Promise((resolve) => {
         exec(command, (error, stdout, stderr) => {
-            if (error) {
+            if (error?.message) {
                 resolve({ success: false, message: error.message, error, stdout, stderr});
             } else {
                 resolve({ success: true, message: stdout });
