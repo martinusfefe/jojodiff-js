@@ -1,0 +1,45 @@
+{
+  "name": "jojodiff-js",
+  "version": "1.0.0",
+  "description": "JojoDiff for JavaScript",
+  "main": "./lib/src/index.js",
+  "scripts": {
+    "postInstall": "node ./scripts/postInstall.js",
+    "install": "npm run postInstall",
+    "build": "tsc && tsc-alias",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "diff",
+    "jojodiff",
+    "janpatch"
+  ],
+  "authors": [
+    "Martin Repka",
+    "Joris Heirbaut"
+  ],
+  "license": "GPL-3.0",
+  "dependencies": {
+    "node": "^20.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "tsc-alias": "^1.8.8",
+    "tscp": "^1.0.0",
+    "typescript": "^5.3.3"
+  }
+}
